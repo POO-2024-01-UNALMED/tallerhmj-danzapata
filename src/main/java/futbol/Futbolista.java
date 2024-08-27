@@ -1,8 +1,9 @@
 package futbol;
 import java.lang.Comparable;
+import java.lang.Math;
 
 
-public abstract class Futbolista implements Comparable<Futbolista>{
+public abstract class Futbolista implements Comparable<Object>{
 	
 	private String nombre;
 	private int edad;
@@ -58,5 +59,9 @@ public abstract class Futbolista implements Comparable<Futbolista>{
 		return "El futbolista "+nombre+" tiene "+edad+", y juega de "+posicion+".";
 	}
 
+	public int compareTo(Object o){
+		Futbolista p = (Futbolista)o;
+		return Math.abs(this.getEdad()-p.getEdad());
+	}
 
 }

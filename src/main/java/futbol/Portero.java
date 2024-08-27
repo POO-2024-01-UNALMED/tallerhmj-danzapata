@@ -1,4 +1,5 @@
 package futbol;
+import java.lang.Math;
 
 public class Portero extends Futbolista {
 
@@ -25,7 +26,8 @@ public class Portero extends Futbolista {
 
 
     //comparar
-    public int compareTo(Futbolista o) {
+    @Override
+    public int compareTo(Object o) {
         Portero p = (Portero) o;
         return Math.abs(this.golesRecibidos-p.golesRecibidos);
     }
